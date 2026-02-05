@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Github, Linkedin, Mail, ExternalLink, Code2, Terminal, Database, Menu, X } from 'lucide-react';
+import { Github, Linkedin, Mail, ExternalLink, Code2, Terminal, Database, Menu, X, MessageCircle } from 'lucide-react';
 
 // --- IMPORT GAMBAR PROJECT & FOTO PROFIL ---
 // Pastikan file profile.jpg sudah ada di folder src/assets/
