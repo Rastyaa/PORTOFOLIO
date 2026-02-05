@@ -201,19 +201,25 @@ const App = () => {
 
       {/* --- CONTACT SECTION --- */}
       <section id="contact" className="py-24 bg-slate-900 text-white relative overflow-hidden">
-        {/* Dekorasi background di footer */}
-        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[1000px] h-[400px] bg-blue-600/20 rounded-full filter blur-3xl opacity-30 pointer-events-none"></div>
+        {/* Dekorasi background hijau halus */}
+        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[1000px] h-[400px] bg-green-600/20 rounded-full filter blur-3xl opacity-30 pointer-events-none"></div>
 
         <div className="max-w-4xl mx-auto px-4 text-center relative z-10">
           <h2 className="text-4xl font-bold mb-8">Mari Bekerja Sama!</h2>
-          <p className="text-slate-300 mb-10 max-w-xl mx-auto text-lg leading-relaxed">Saya selalu terbuka untuk peluang baru. Apakah Anda memiliki pertanyaan atau proyek menarik? Jangan ragu untuk menghubungi saya.</p>
-          <a href="mailto:email@anda.com" className="inline-flex items-center px-10 py-5 bg-blue-600 rounded-full font-bold text-lg hover:bg-blue-500 transition-all duration-300 shadow-lg shadow-blue-600/30 hover:-translate-y-1">
-            <Mail className="w-6 h-6 mr-3" />
-            Kirim Email
-          </a>
+          <p className="text-slate-300 mb-10 max-w-xl mx-auto text-lg leading-relaxed">Saya selalu terbuka untuk peluang baru. Apakah Anda memiliki pertanyaan atau proyek menarik? Jangan ragu untuk menghubungi saya via WhatsApp.</p>
 
+          {/* TOMBOL WHATSAPP - JANGAN LUPA GANTI NOMOR DI SINI */}
+          <a
+            href="https://wa.me/6281246743426?text=Halo,%20saya%20tertarik%20untuk%20diskusi%20project"
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center px-10 py-5 bg-green-600 rounded-full font-bold text-lg hover:bg-green-500 transition-all duration-300 shadow-lg shadow-green-600/30 hover:-translate-y-1"
+          >
+            <MessageCircle className="w-6 h-6 mr-3" />
+            Chat WhatsApp
+          </a>
           <div className="mt-20 pt-8 border-t border-slate-800 text-slate-500 text-sm">
-            <span className="text-red-500"></span>React & Tailwind CSS. © 2026.
+            Dibuat dengan <span className="text-red-500">❤</span> menggunakan React & Tailwind CSS. © 2026.
           </div>
         </div>
       </section>
