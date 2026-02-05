@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Github, Linkedin, Mail, ExternalLink, Code2, Terminal, Database, Menu, X, MessageCircle } from 'lucide-react';
+import { Github, Linkedin, Mail, Code2, Terminal, Database, Menu, X, MessageCircle } from 'lucide-react';
 
 // --- IMPORT GAMBAR PROJECT & FOTO PROFIL ---
 // Pastikan file profile.jpg sudah ada di folder src/assets/
@@ -219,7 +219,7 @@ const App = () => {
             Chat WhatsApp
           </a>
           <div className="mt-20 pt-8 border-t border-slate-800 text-slate-500 text-sm">
-            Dibuat dengan <span className="text-red-500">❤</span> menggunakan React & Tailwind CSS. © 2026.
+            <span className="text-red-500"></span> React & Tailwind CSS. © 2026.
           </div>
         </div>
       </section>
