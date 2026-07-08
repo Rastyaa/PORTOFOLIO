@@ -1,0 +1,268 @@
+import guestlistHome from '../assets/guestlist-home.png';
+import guestlistDetail from '../assets/guestlist-detail.png';
+import posImg from '../assets/pos-mockup.png';
+import biosmbHome from '../assets/biosmb-home.png';
+import enumaImg from '../assets/Enuma.jpeg';
+import souvImg from '../assets/Souv.jpeg';
+
+export const roles = ['Software Engineer', 'React Developer', 'Fullstack Enthusiast'];
+
+export const socials = {
+  github: 'https://github.com/Rastyaa',
+  linkedin: 'https://www.linkedin.com/in/made-sattyatma-naryndra-pradnyana-b61481336/',
+  email: 'reenkdk2314@gmail.com',
+  whatsapp: 'https://wa.me/6281246743426?text=Halo,%20saya%20tertarik%20untuk%20diskusi%20project',
+};
+
+export const stats = [
+  { label: 'Tahun Coding', value: '3+' },
+  { label: 'Project Selesai', value: '10+' },
+  { label: 'Teknologi Dikuasai', value: '8+' },
+];
+
+export const projects = [
+  {
+    slug: 'guestlist',
+    title: 'Guestlist',
+    desc: 'Marketplace curated experience & booking di Bali — mulai dari nightlife, tur, hingga layanan in-room, lengkap dengan e-ticket instan dan mitra terverifikasi. Berkontribusi membangun dashboard Backoffice (operasional internal), Guestlist Partner (portal mitra), dan aplikasi mobile.',
+    tech: ['Next.js', 'TypeScript', 'React Native', 'Golang', 'Express.js', 'Supabase'],
+    link: 'https://guestlist.id',
+    image: guestlistHome,
+    images: [guestlistHome, guestlistDetail],
+    iconKey: 'guestlist',
+    scene: { color: '#34d399' },
+    caseStudy: {
+      subtitle: 'Platform concierge modern untuk nightlife, layanan, dan pengalaman curated di Bali.',
+      meta: {
+        client: 'Guestlist.ID',
+        role: 'Fullstack Engineer',
+        year: '2026',
+        timeline: 'Feb 2026 – Sekarang',
+        scope: 'Web, Mobile, Backoffice & Partner Portal',
+        location: 'Bali, Indonesia',
+      },
+      liveUrl: 'https://guestlist.id',
+      overview:
+        'Guestlist adalah marketplace curated experience yang menghubungkan wisatawan dengan nightlife, tur, dan layanan in-room terverifikasi di Bali. Sebagai fullstack engineer, saya membangun dan memelihara tiga produk dalam satu ekosistem: aplikasi konsumen, Guestlist Partner untuk mitra bisnis, dan dashboard Backoffice untuk tim operasional — melayani 1.000+ klien aktif dengan uptime 98%.',
+      stats: [
+        { value: '1.000+', label: 'Klien aktif' },
+        { value: '15+', label: 'Endpoint REST API' },
+        { value: '98%', label: 'Uptime' },
+      ],
+      sections: [
+        {
+          title: 'Discovery & Booking',
+          body: 'Halaman pencarian dengan filter kategori & lokasi, quick category, dan listing yang di-curate tim lokal — dirancang agar tamu menemukan pengalaman yang tepat dalam beberapa klik.',
+          image: guestlistHome,
+        },
+        {
+          title: 'Detail Produk & Checkout',
+          body: 'Halaman detail menampilkan galeri, pilihan paket, kalender tanggal real-time, dan kode promotor — terintegrasi dengan sistem booking & e-ticket instan.',
+          image: guestlistDetail,
+        },
+        {
+          title: 'Guestlist Partner',
+          body: 'Portal khusus mitra bisnis untuk mengelola listing, memantau pemesanan masuk, dan berkoordinasi langsung dengan tim operasional Guestlist.',
+        },
+        {
+          title: 'Backoffice Operasional',
+          body: 'Dashboard internal untuk tim ops: manajemen katalog layanan skala besar, monitoring transaksi, dan tooling debugging fullstack sehari-hari.',
+        },
+        {
+          title: 'Aplikasi Mobile',
+          body: 'Aplikasi React Native lintas platform (iOS & Android) untuk pengguna akhir — booking, e-ticket, dan riwayat pemesanan dalam genggaman.',
+        },
+      ],
+      tech: ['React Js', 'Next.js', 'TypeScript', 'React Native', 'Golang', 'Express.js', 'PostgreSQL', 'Supabase'],
+      responsibilities: [
+        'Merancang & mengimplementasikan 15+ endpoint RESTful API dengan Golang dan Express.js, menurunkan response time rata-rata 40%.',
+        'Membangun antarmuka web responsif dengan React JS & Next.js, dan aplikasi mobile cross-platform dengan React Native.',
+        'Mengelola & mengoptimasi database PostgreSQL via Supabase, termasuk desain skema dan onboarding data katalog layanan skala besar.',
+        'Berkolaborasi dengan tim product menerjemahkan kebutuhan bisnis jadi spesifikasi teknis, serta rutin melakukan code review & debugging fullstack.',
+        'Mengintegrasikan layanan pihak ketiga untuk memperluas kapabilitas produk dan mempermudah workflow klien.',
+      ],
+    },
+  },
+  {
+    slug: 'biosmb',
+    title: 'Biosmb — PT Sinar Mahira Bali',
+    desc: 'Company profile untuk penyedia solusi infrastruktur sanitasi & pengolahan air limbah (IPAL) berbahan fiberglass premium, melayani segmen residensial, komersial, dan industri.',
+    tech: ['React', 'Tailwind CSS'],
+    link: 'https://www.biosmb.com',
+    image: biosmbHome,
+    iconKey: 'biosmb',
+    scene: { color: '#fbbf24' },
+    caseStudy: {
+      subtitle: 'Landing page company profile untuk solusi sanitasi & IPAL fiberglass premium.',
+      meta: {
+        client: 'PT Sinar Mahira Bali',
+        role: 'Freelance Frontend Engineer',
+        year: '2026',
+        timeline: 'Juni 2026',
+        scope: 'Landing Page, UI/UX, SEO',
+        location: 'Bali, Indonesia',
+      },
+      liveUrl: 'https://www.biosmb.com',
+      overview:
+        'Mendesain dan mengembangkan landing page company profile untuk Biosmb, penyedia sistem sanitasi & pengolahan air limbah berbahan fiberglass. Mengelola seluruh siklus proyek secara independen — dari konsultasi klien, wireframing UI/UX, development, testing, hingga deployment & handover.',
+      stats: [
+        { value: '90+', label: 'Google PageSpeed score' },
+        { value: '100%', label: 'Responsive di semua device' },
+        { value: 'Solo', label: 'Full project lifecycle' },
+      ],
+      sections: [
+        {
+          title: 'Hero & Value Proposition',
+          body: 'Hero section menonjolkan proposisi utama "Sistem Sanitasi & Pengolahan Air Limbah Terbaik di Kelasnya" dengan CTA konsultasi gratis dan showcase fasilitas produksi.',
+          image: biosmbHome,
+        },
+      ],
+      tech: ['React', 'Tailwind CSS'],
+      responsibilities: [
+        'Menerapkan SEO best practice: semantic HTML, meta tags, dan optimasi asset loading untuk visibilitas pencarian organik.',
+        'Membangun layout fully responsive yang teroptimasi untuk desktop, tablet, dan mobile.',
+        'Mengelola proyek dari konsultasi awal, wireframe, development, testing, hingga deployment secara mandiri.',
+      ],
+    },
+  },
+  {
+    slug: 'pos-fullstack',
+    title: 'Point of Sale (POS) Fullstack',
+    desc: 'Sistem POS modern dengan backend Go (Golang) dan frontend React. Menampilkan laporan penjualan, manajemen produk, dan checkout yang responsif.',
+    tech: ['Golang', 'React JS', 'Tailwind CSS', 'PostgreSQL'],
+    link: '#',
+    image: posImg,
+    iconKey: 'pos',
+    scene: { color: '#10b981' },
+    caseStudy: {
+      subtitle: 'Sistem kasir & manajemen toko fullstack dengan backend Golang.',
+      meta: {
+        client: 'Personal Project',
+        role: 'Fullstack Developer',
+        year: '2025',
+        scope: 'Web App',
+        location: 'Bali, Indonesia',
+      },
+      overview:
+        'Sistem Point of Sale modern untuk kebutuhan toko/kafe kecil-menengah: manajemen produk, checkout responsif, dan laporan penjualan real-time, dengan backend Golang yang cepat dan frontend React yang ringan.',
+      sections: [
+        {
+          title: 'Dashboard & Checkout',
+          body: 'Dashboard menampilkan ringkasan penjualan harian, grafik tren, dan produk terlaris; alur checkout dirancang cepat untuk operasional kasir sehari-hari.',
+          image: posImg,
+        },
+      ],
+      tech: ['Golang', 'React JS', 'Tailwind CSS', 'PostgreSQL'],
+      responsibilities: [
+        'Merancang REST API backend dengan Golang untuk transaksi, produk, dan laporan.',
+        'Membangun frontend React responsif untuk alur kasir dan dashboard laporan.',
+      ],
+    },
+  },
+  {
+    slug: 'enuma-lens-camera',
+    title: 'Enuma Lens & Camera',
+    desc: 'Platform E-Commerce untuk penyewaan dan penjualan alat fotografi. Aplikasi fullstack yang menangani pemesanan & inventaris.',
+    tech: ['PHP', 'MySQL', 'HTML/CSS'],
+    link: '#',
+    image: enumaImg,
+    iconKey: 'enuma',
+    scene: { color: '#a3e635' },
+    caseStudy: {
+      subtitle: 'Platform e-commerce penyewaan & penjualan alat fotografi.',
+      meta: {
+        client: 'Enuma Lens & Camera',
+        role: 'Fullstack Developer',
+        year: '2024',
+        scope: 'Web App',
+        location: 'Bali, Indonesia',
+      },
+      overview:
+        'Aplikasi fullstack untuk bisnis penyewaan dan penjualan alat fotografi, menangani katalog produk, pemesanan, dan manajemen inventaris dalam satu platform.',
+      sections: [
+        {
+          title: 'Katalog & Pemesanan',
+          body: 'Katalog alat fotografi dengan status ketersediaan real-time dan alur pemesanan sewa/beli dalam satu platform.',
+          image: enumaImg,
+        },
+      ],
+      tech: ['PHP', 'MySQL', 'HTML/CSS'],
+      responsibilities: [
+        'Membangun backend PHP & MySQL untuk manajemen inventaris dan pemesanan.',
+        'Mengembangkan antarmuka katalog produk yang mudah digunakan.',
+      ],
+    },
+  },
+  {
+    slug: 'souv-id',
+    title: 'Souv ID',
+    desc: 'Website branding modern dengan fokus pada UI/UX yang responsif dan interaktif menggunakan React.',
+    tech: ['React JS', 'Tailwind CSS', 'Vite'],
+    link: '#',
+    image: souvImg,
+    iconKey: 'souv',
+    scene: { color: '#2dd4bf' },
+    caseStudy: {
+      subtitle: 'Website branding modern dengan UI/UX interaktif.',
+      meta: {
+        client: 'Souv ID',
+        role: 'Frontend Developer',
+        year: '2024',
+        scope: 'Website',
+        location: 'Bali, Indonesia',
+      },
+      overview:
+        'Website branding untuk Souv ID dengan fokus pada tampilan modern, interaktif, dan responsif di seluruh perangkat, dibangun dengan React dan Tailwind CSS.',
+      sections: [
+        {
+          title: 'Landing & Branding',
+          body: 'Landing page dengan identitas visual brand yang konsisten dan interaksi micro-animation untuk pengalaman menjelajah yang lebih hidup.',
+          image: souvImg,
+        },
+      ],
+      tech: ['React JS', 'Tailwind CSS', 'Vite'],
+      responsibilities: ['Membangun UI interaktif dan responsif dengan React JS & Tailwind CSS menggunakan Vite.'],
+    },
+  },
+];
+
+export const techStack = {
+  Languages: [
+    { name: 'JavaScript', icon: 'SiJavascript', color: 'text-amber-400', bg: 'bg-amber-400/10', border: 'border-amber-400/20' },
+    { name: 'TypeScript', icon: 'SiTypescript', color: 'text-sky-400', bg: 'bg-sky-400/10', border: 'border-sky-400/20' },
+    { name: 'Golang', icon: 'SiGo', color: 'text-teal-400', bg: 'bg-teal-400/10', border: 'border-teal-400/20' },
+    { name: 'PHP', icon: 'SiPhp', color: 'text-indigo-400', bg: 'bg-indigo-400/10', border: 'border-indigo-400/20' },
+    { name: 'HTML/CSS', icon: 'SiHtml5', color: 'text-orange-400', bg: 'bg-orange-400/10', border: 'border-orange-400/20' },
+  ],
+  Frameworks: [
+    { name: 'React', icon: 'SiReact', color: 'text-cyan-400', bg: 'bg-cyan-400/10', border: 'border-cyan-400/20' },
+    { name: 'Next.js', icon: 'SiNextdotjs', color: 'text-slate-200', bg: 'bg-slate-200/10', border: 'border-slate-200/20' },
+    { name: 'React Native', icon: 'SiReact', color: 'text-teal-300', bg: 'bg-teal-300/10', border: 'border-teal-300/20' },
+    { name: 'Node.js', icon: 'SiNodedotjs', color: 'text-green-500', bg: 'bg-green-500/10', border: 'border-green-500/20' },
+    { name: 'Express.js', icon: 'SiExpress', color: 'text-slate-300', bg: 'bg-slate-300/10', border: 'border-slate-300/20' },
+    { name: 'Tailwind CSS', icon: 'SiTailwindcss', color: 'text-cyan-300', bg: 'bg-cyan-300/10', border: 'border-cyan-300/20' },
+    { name: 'Framer Motion', icon: 'SiFramer', color: 'text-fuchsia-400', bg: 'bg-fuchsia-400/10', border: 'border-fuchsia-400/20' },
+    { name: 'Vite', icon: 'SiVite', color: 'text-purple-400', bg: 'bg-purple-400/10', border: 'border-purple-400/20' },
+  ],
+  Database: [
+    { name: 'PostgreSQL', icon: 'SiPostgresql', color: 'text-sky-400', bg: 'bg-sky-400/10', border: 'border-sky-400/20' },
+    { name: 'Supabase', icon: 'SiSupabase', color: 'text-emerald-400', bg: 'bg-emerald-400/10', border: 'border-emerald-400/20' },
+    { name: 'MySQL', icon: 'SiMysql', color: 'text-blue-400', bg: 'bg-blue-400/10', border: 'border-blue-400/20' },
+    { name: 'Firebase', icon: 'SiFirebase', color: 'text-amber-400', bg: 'bg-amber-400/10', border: 'border-amber-400/20' },
+  ],
+  Tools: [
+    { name: 'Git', icon: 'SiGit', color: 'text-orange-500', bg: 'bg-orange-500/10', border: 'border-orange-500/20' },
+    { name: 'Docker', icon: 'SiDocker', color: 'text-sky-400', bg: 'bg-sky-400/10', border: 'border-sky-400/20' },
+    { name: 'GitHub Actions', icon: 'SiGithubactions', color: 'text-blue-400', bg: 'bg-blue-400/10', border: 'border-blue-400/20' },
+    { name: 'Figma', icon: 'SiFigma', color: 'text-pink-400', bg: 'bg-pink-400/10', border: 'border-pink-400/20' },
+    { name: 'Postman', icon: 'SiPostman', color: 'text-orange-400', bg: 'bg-orange-400/10', border: 'border-orange-400/20' },
+    { name: 'Vercel', icon: 'SiVercel', color: 'text-slate-200', bg: 'bg-slate-200/10', border: 'border-slate-200/20' },
+  ],
+};
+
+export const navLinks = [
+  { label: 'About', href: '#about' },
+  { label: 'Skills', href: '#skills' },
+  { label: 'Projects', href: '#projects' },
+  { label: 'Contact', href: '#contact' },
+];
