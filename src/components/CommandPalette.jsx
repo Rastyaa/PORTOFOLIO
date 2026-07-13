@@ -76,7 +76,7 @@ const CommandPalette = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className="fixed inset-0 z-[100] bg-slate-950/70 backdrop-blur-sm flex items-start justify-center pt-[15vh] px-4"
+          className="fixed inset-0 z-[100] bg-ink/80 backdrop-blur-sm flex items-start justify-center pt-[15vh] px-4"
           onClick={close}
         >
           <motion.div
@@ -85,10 +85,10 @@ const CommandPalette = () => {
             exit={{ opacity: 0, y: -12, scale: 0.98 }}
             transition={{ duration: 0.18, ease: 'easeOut' }}
             onClick={(e) => e.stopPropagation()}
-            className="w-full max-w-lg bg-slate-900/95 border border-white/10 rounded-2xl shadow-2xl shadow-black/50 overflow-hidden"
+            className="w-full max-w-lg bg-raised border border-line shadow-2xl shadow-black/60 overflow-hidden"
           >
-            <div className="flex items-center gap-3 px-5 py-4 border-b border-white/10">
-              <Search size={18} className="text-slate-500" />
+            <div className="flex items-center gap-3 px-5 py-4 border-b border-line">
+              <Search size={16} className="text-muted" />
               <input
                 autoFocus
                 value={query}
@@ -97,26 +97,24 @@ const CommandPalette = () => {
                   setActiveIndex(0);
                 }}
                 placeholder="Jump to a section or link..."
-                className="flex-1 bg-transparent outline-none text-slate-100 placeholder:text-slate-500"
+                className="flex-1 bg-transparent outline-none text-paper placeholder:text-muted"
               />
-              <kbd className="text-xs text-slate-500 border border-white/10 rounded px-1.5 py-0.5">esc</kbd>
+              <kbd className="meta border border-line px-1.5 py-0.5">esc</kbd>
             </div>
 
             <div className="max-h-80 overflow-y-auto py-2">
-              {filtered.length === 0 && (
-                <p className="px-5 py-6 text-slate-500 text-sm text-center">No matches.</p>
-              )}
+              {filtered.length === 0 && <p className="meta px-5 py-6 text-center">No matches.</p>}
               {filtered.map((item, index) => (
                 <button
                   key={item.label}
                   onMouseEnter={() => setActiveIndex(index)}
                   onClick={() => select(item)}
                   className={`w-full flex items-center gap-3 px-5 py-3 text-left transition-colors ${
-                    index === activeIndex ? 'bg-emerald-500/10 text-emerald-400' : 'text-slate-300'
+                    index === activeIndex ? 'bg-jade/10 text-jade-lit' : 'text-muted'
                   }`}
                 >
-                  <item.icon size={16} />
-                  <span className="font-medium">{item.label}</span>
+                  <item.icon size={15} />
+                  <span className="text-sm font-medium">{item.label}</span>
                 </button>
               ))}
             </div>

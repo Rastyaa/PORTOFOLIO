@@ -1,47 +1,62 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { ArrowUpRight } from 'lucide-react';
 import { projects } from '../data/portfolio';
 import SectionHeading from './SectionHeading';
-import ProjectMockup from './ProjectMockup';
+import ProjectFrame from './ProjectFrame';
 
-const ProjectCard = ({ project, featured, offset }) => (
-  <motion.div
-    initial={{ opacity: 0, y: 40 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true, margin: '-50px' }}
-    transition={{ duration: 0.5, delay: 0.05 }}
-    className={`group ${offset ? 'lg:mt-28' : ''}`}
-  >
-    <Link to={`/projects/${project.slug}`} aria-label={`Lihat detail ${project.title}`} className="block">
-      <ProjectMockup project={project} featured={featured} />
+const ProjectRow = ({ project, index }) => {
+  const { meta } = project.caseStudy;
 
-      <div className="pt-6 max-w-xl">
-        <p className="text-slate-300 leading-snug">
-          <span className="font-bold text-white group-hover:text-emerald-400 transition-colors">{project.title}</span>
-          {' — '}
-          {project.desc}
-        </p>
-        <p className="mt-2 text-[11px] uppercase tracking-[0.2em] text-slate-500">
-          {project.tech.slice(0, 2).join(' • ')}
-        </p>
-      </div>
-    </Link>
-  </motion.div>
-);
+  return (
+    <motion.article
+      initial={{ opacity: 0, y: 24 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: '-80px' }}
+      transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+      className="group border-t border-line pt-6 transition-colors duration-500 hover:border-jade-lit"
+    >
+      <Link to={`/projects/${project.slug}`} className="block">
+        <div className="flex flex-wrap items-baseline gap-x-6 gap-y-2">
+          <span className="meta text-paper">{String(index + 1).padStart(2, '0')}</span>
+          <h3 className="font-display text-3xl md:text-5xl font-semibold tracking-[-0.03em] text-paper transition-transform duration-500 group-hover:translate-x-1.5">
+            {project.title}
+          </h3>
+          <span className="meta ml-auto">{meta.year}</span>
+        </div>
+
+        <div className="mt-4 flex flex-wrap items-center gap-x-6 gap-y-2">
+          <span className="meta">{meta.role}</span>
+          <span className="meta">{project.tech.slice(0, 4).join(' · ')}</span>
+          <span className="meta ml-auto flex items-center gap-1.5 text-muted opacity-0 transition-opacity duration-300 group-hover:opacity-100 group-hover:text-jade-lit">
+            Read case study
+            <ArrowUpRight size={13} />
+          </span>
+        </div>
+
+        <div className="mt-8 grid grid-cols-1 gap-8 lg:grid-cols-12 lg:items-start">
+          <div className="lg:col-span-8">
+            <ProjectFrame image={project.image} alt={project.title} />
+          </div>
+          <p className="font-text text-lg leading-relaxed text-muted lg:col-span-4">{project.desc}</p>
+        </div>
+      </Link>
+    </motion.article>
+  );
+};
 
 const Projects = () => (
-  <section id="projects" className="py-28 px-4 relative z-10 border-t border-white/5">
-    <div className="max-w-6xl mx-auto">
-      <SectionHeading eyebrow="Selected Work" title="Featured Projects" subtitle="Eksplorasi karya terbaik saya dalam pengembangan fullstack." />
+  <section id="projects" className="py-28">
+    <div className="max-w-[1200px] mx-auto px-6">
+      <SectionHeading
+        eyebrow="Selected work"
+        title="Lima proyek, satu benang merah"
+        subtitle="Produk yang dipakai orang sungguhan — bukan demo."
+      />
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-12 gap-y-16 lg:gap-y-8 mt-8">
+      <div className="space-y-24">
         {projects.map((project, index) => (
-          <ProjectCard
-            key={project.slug}
-            project={project}
-            featured={index === 0}
-            offset={index % 2 === 1}
-          />
+          <ProjectRow key={project.slug} project={project} index={index} />
         ))}
       </div>
     </div>

@@ -1,32 +1,104 @@
 @import 'tailwindcss';
 
 @theme {
-  --font-sans: 'Outfit', sans-serif;
-  --font-display: 'Space Grotesk', sans-serif;
-  --font-serif: 'Fraunces', serif;
+  --color-ink: #080a09;
+  --color-raised: #0f1311;
+  --color-paper: #e9e7e2;
+  --color-muted: #8a918c;
+  --color-line: rgba(233, 231, 226, 0.1);
+  --color-line-strong: rgba(233, 231, 226, 0.22);
+  --color-jade: #16a34a;
+  --color-jade-lit: #5fd39b;
 
-  --animate-pulse-slow: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-  --animate-float: float 6s ease-in-out infinite;
-  --animate-float-delayed: float 6s ease-in-out 1.5s infinite;
+  --font-sans: 'Bricolage Grotesque', sans-serif;
+  --font-display: 'Bricolage Grotesque', sans-serif;
+  --font-text: 'Newsreader', serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+  --animate-grain: grain 0.6s steps(3) infinite;
 }
 
-@keyframes float {
+/* Each ribbon carries its own skew so the animation never drops it. */
+@keyframes ribbon-a {
   0%,
   100% {
-    transform: translateY(0);
+    transform: skewY(-16deg) translate3d(-18%, 0, 0) scaleY(1);
+    opacity: 0.85;
   }
-  50% {
-    transform: translateY(-14px);
+  30% {
+    transform: skewY(-4deg) translate3d(10%, 7%, 0) scaleY(1.45);
+    opacity: 1;
+  }
+  65% {
+    transform: skewY(-22deg) translate3d(16%, -5%, 0) scaleY(0.8);
+    opacity: 0.6;
+  }
+}
+
+@keyframes ribbon-b {
+  0%,
+  100% {
+    transform: skewY(12deg) translate3d(14%, 3%, 0) scaleY(1.2);
+    opacity: 0.7;
+  }
+  35% {
+    transform: skewY(-2deg) translate3d(-16%, -6%, 0) scaleY(0.75);
+    opacity: 1;
+  }
+  70% {
+    transform: skewY(16deg) translate3d(-4%, 8%, 0) scaleY(1.4);
+    opacity: 0.8;
+  }
+}
+
+@keyframes ribbon-c {
+  0%,
+  100% {
+    transform: skewY(-6deg) translate3d(12%, -4%, 0) scaleY(0.85);
+    opacity: 0.6;
+  }
+  40% {
+    transform: skewY(-18deg) translate3d(-14%, 6%, 0) scaleY(1.5);
+    opacity: 1;
+  }
+  75% {
+    transform: skewY(2deg) translate3d(6%, -2%, 0) scaleY(1.1);
+    opacity: 0.75;
+  }
+}
+
+@keyframes grain {
+  0% {
+    transform: translate(0, 0);
+  }
+  33% {
+    transform: translate(-2%, 1%);
+  }
+  66% {
+    transform: translate(1%, -2%);
+  }
+  100% {
+    transform: translate(0, 0);
   }
 }
 
 body {
   font-family: var(--font-sans);
-  @apply bg-slate-950 text-slate-100;
+  @apply bg-ink text-paper antialiased;
 }
 
 ::selection {
-  @apply bg-emerald-500/30;
+  @apply bg-jade/30 text-paper;
+}
+
+:focus-visible {
+  @apply outline-2 outline-offset-4 outline-jade-lit;
+}
+
+/* Metadata voice: index, year, role, stack, nav. */
+.meta {
+  font-family: var(--font-mono);
+  @apply text-[11px] uppercase tracking-[0.14em] text-muted;
 }
 
 @media (prefers-reduced-motion: reduce) {

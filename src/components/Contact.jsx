@@ -1,56 +1,88 @@
+import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Github, Linkedin, Mail, MessageCircle } from 'lucide-react';
-import { fadeInUp } from '../lib/motion';
+import { ArrowUpRight, Check, Copy } from 'lucide-react';
+import { fadeInUp, staggerContainer } from '../lib/motion';
 import { socials } from '../data/portfolio';
 
-const Contact = () => (
-  <section id="contact" className="py-32 relative overflow-hidden border-t border-white/5">
-    <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-emerald-600/10 rounded-full filter blur-[100px] pointer-events-none" />
+const links = [
+  { label: 'WhatsApp', href: socials.whatsapp },
+  { label: 'GitHub', href: socials.github },
+  { label: 'LinkedIn', href: socials.linkedin },
+];
 
-    <motion.div
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true }}
-      variants={fadeInUp}
-      className="max-w-4xl mx-auto px-4 text-center relative z-10"
-    >
-      <h2 className="text-5xl font-bold font-display mb-8 text-white">
-        Let's Build Something
-        <br />
-        <span className="font-serif italic text-emerald-400">Amazing Together</span>
-      </h2>
-      <p className="text-slate-400 mb-12 max-w-xl mx-auto text-xl leading-relaxed">
-        Terbuka untuk peluang baru, diskusi proyek, atau sekadar ngobrol santai seputar teknologi.
-      </p>
+const Contact = () => {
+  const [copied, setCopied] = useState(false);
 
-      <a
-        href={socials.whatsapp}
-        target="_blank"
-        rel="noreferrer"
-        className="inline-flex items-center px-10 py-5 bg-gradient-to-r from-green-500 to-emerald-600 rounded-full font-bold text-lg text-white hover:from-green-400 hover:to-emerald-500 transition-all duration-300 shadow-[0_0_30px_rgba(16,185,129,0.3)] hover:shadow-[0_0_50px_rgba(16,185,129,0.5)] hover:-translate-y-1"
-      >
-        <MessageCircle className="w-6 h-6 mr-3" />
-        Chat via WhatsApp
-      </a>
+  const copyEmail = async () => {
+    await navigator.clipboard.writeText(socials.email);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
 
-      <div className="flex justify-center gap-4 mt-10">
-        <a href={socials.github} target="_blank" rel="noreferrer" className="p-4 bg-slate-900 border border-white/10 rounded-full hover:border-emerald-400 hover:text-emerald-400 transition-all shadow-lg hover:shadow-emerald-500/20 hover:scale-105 group">
-          <Github className="w-6 h-6 text-slate-400 group-hover:text-emerald-400 transition-colors" />
-        </a>
-        <a href={socials.linkedin} target="_blank" rel="noreferrer" className="p-4 bg-slate-900 border border-white/10 rounded-full hover:border-emerald-400 hover:text-emerald-400 transition-all shadow-lg hover:shadow-emerald-500/20 hover:scale-105 group">
-          <Linkedin className="w-6 h-6 text-slate-400 group-hover:text-emerald-400 transition-colors" />
-        </a>
-        <a href={`mailto:${socials.email}`} className="p-4 bg-slate-900 border border-white/10 rounded-full hover:border-emerald-400 hover:text-emerald-400 transition-all shadow-lg hover:shadow-emerald-500/20 hover:scale-105 group">
-          <Mail className="w-6 h-6 text-slate-400 group-hover:text-emerald-400 transition-colors" />
-        </a>
+  return (
+    <section id="contact" className="pt-28 pb-12">
+      <div className="max-w-[1200px] mx-auto px-6">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: '-80px' }}
+          variants={staggerContainer}
+          className="border-t border-line pt-10"
+        >
+          <motion.span variants={fadeInUp} className="meta block mb-8">
+            Contact
+          </motion.span>
+
+          <motion.h2
+            variants={fadeInUp}
+            className="font-display text-[clamp(2.25rem,6vw,4.5rem)] font-semibold leading-[1.02] tracking-[-0.035em] text-paper max-w-3xl"
+          >
+            Punya produk yang perlu dikirim? Mari bicara.
+          </motion.h2>
+
+          <motion.div variants={fadeInUp} className="mt-12 flex flex-wrap items-center gap-x-6 gap-y-4">
+            <a
+              href={`mailto:${socials.email}`}
+              className="font-display text-2xl md:text-4xl font-medium tracking-[-0.02em] text-paper border-b border-line-strong pb-1 transition-colors hover:border-jade-lit hover:text-jade-lit"
+            >
+              {socials.email}
+            </a>
+            <button
+              onClick={copyEmail}
+              className="meta inline-flex items-center gap-2 border border-line px-3 py-2 transition-colors hover:border-line-strong hover:text-paper"
+            >
+              {copied ? <Check size={13} className="text-jade-lit" /> : <Copy size={13} />}
+              {copied ? 'Copied' : 'Copy'}
+            </button>
+          </motion.div>
+
+          <motion.ul variants={fadeInUp} className="mt-12 flex flex-wrap gap-x-10 gap-y-4">
+            {links.map((link) => (
+              <li key={link.label}>
+                <a
+                  href={link.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="meta group inline-flex items-center gap-1.5 transition-colors hover:text-paper"
+                >
+                  {link.label}
+                  <ArrowUpRight
+                    size={13}
+                    className="transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                  />
+                </a>
+              </li>
+            ))}
+          </motion.ul>
+        </motion.div>
+
+        <div className="mt-24 border-t border-line pt-6 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+          <span className="meta">© 2026 Sattyatma Naryndra</span>
+          <span className="meta">React · Tailwind · Framer Motion</span>
+        </div>
       </div>
-
-      <div className="mt-20 pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between text-slate-500 text-sm">
-        <p>© 2026 Sattyatma Naryndra. All rights reserved.</p>
-        <p className="mt-2 md:mt-0">Built with React, Tailwind & Framer Motion.</p>
-      </div>
-    </motion.div>
-  </section>
-);
+    </section>
+  );
+};
 
 export default Contact;

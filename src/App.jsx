@@ -4,6 +4,7 @@ import Lenis from 'lenis';
 import Navbar from './components/Navbar';
 import CommandPalette from './components/CommandPalette';
 import ScrollToTop from './components/ScrollToTop';
+import Backdrop from './components/Backdrop';
 import Home from './pages/Home';
 import ProjectDetail from './pages/ProjectDetail';
 
@@ -28,9 +29,8 @@ const App = () => {
 
   return (
     <BrowserRouter basename={import.meta.env.BASE_URL.replace(/\/$/, '')}>
-      <div className="min-h-screen bg-slate-950 text-slate-100 font-sans overflow-x-hidden relative selection:bg-emerald-500/30">
-        <div className="fixed top-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-emerald-600/20 blur-[120px] pointer-events-none" />
-        <div className="fixed bottom-[-10%] right-[-10%] w-[40%] h-[40%] rounded-full bg-lime-600/20 blur-[120px] pointer-events-none" />
+      <div className="min-h-screen overflow-x-hidden relative">
+        <Backdrop />
 
         <ScrollToTop />
         <Navbar />

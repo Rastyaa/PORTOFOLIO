@@ -5,17 +5,17 @@ const SectionHeading = ({ eyebrow, title, subtitle }) => (
   <motion.div
     initial="hidden"
     whileInView="visible"
-    viewport={{ once: true, margin: '-100px' }}
+    viewport={{ once: true, margin: '-80px' }}
     variants={fadeInUp}
-    className="text-center mb-20"
+    className="border-t border-line pt-6 mb-16"
   >
-    {eyebrow && (
-      <span className="inline-block text-emerald-400 font-mono text-sm tracking-widest mb-4">{eyebrow}</span>
-    )}
-    <h2 className="text-3xl md:text-5xl font-bold font-display bg-clip-text text-transparent bg-gradient-to-r from-white to-slate-400">
-      {title}
-    </h2>
-    {subtitle && <p className="text-slate-400 mt-4 text-lg">{subtitle}</p>}
+    <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+      <div>
+        {eyebrow && <span className="meta block mb-4">{eyebrow}</span>}
+        <h2 className="font-display text-4xl md:text-5xl font-semibold tracking-[-0.03em] text-paper">{title}</h2>
+      </div>
+      {subtitle && <p className="font-text text-lg text-muted max-w-sm md:text-right">{subtitle}</p>}
+    </div>
   </motion.div>
 );
 
