@@ -51,7 +51,7 @@ const Projects = () => (
       <SectionHeading
         eyebrow="Selected work"
         title="Lima proyek, satu benang merah"
-        subtitle="Produk yang dipakai orang sungguhan — bukan demo."
+        subtitle="Proyek yang saya kerjakan — dari produk production hingga eksplorasi personal."
       />
 
       <div className="space-y-24">

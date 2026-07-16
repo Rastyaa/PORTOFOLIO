@@ -1,6 +1,12 @@
 import guestlistHome from '../assets/guestlist-home.png';
 import guestlistDetail from '../assets/guestlist-detail.png';
-import posImg from '../assets/pos-mockup.png';
+import posDashboard from '../assets/pos-dashboard.png';
+import posMenu from '../assets/pos-menu.png';
+import posLaporan from '../assets/pos-laporan.png';
+import posKasir from '../assets/pos-kasir.png';
+import posMeja from '../assets/pos-meja.png';
+import posPesanan from '../assets/pos-pesanan.png';
+import posSelforder from '../assets/pos-selforder.png';
 import biosmbHome from '../assets/biosmb-home.png';
 import enumaImg from '../assets/Enuma.jpeg';
 import souvImg from '../assets/Souv.jpeg';
@@ -15,8 +21,8 @@ export const socials = {
 };
 
 export const stats = [
-  { label: 'Tahun Coding', value: '3+' },
-  { label: 'Project Selesai', value: '10+' },
+  { label: 'Tahun Coding', value: '1+' },
+  { label: 'Project Selesai', value: '4+' },
   { label: 'Teknologi Dikuasai', value: '8+' },
 ];
 
@@ -131,7 +137,8 @@ export const projects = [
     desc: 'Sistem POS modern dengan backend Go (Golang) dan frontend React. Menampilkan laporan penjualan, manajemen produk, dan checkout yang responsif.',
     tech: ['Golang', 'React JS', 'Tailwind CSS', 'PostgreSQL'],
     link: '#',
-    image: posImg,
+    image: posDashboard,
+    images: [posDashboard, posMenu, posKasir, posLaporan, posMeja, posPesanan, posSelforder],
     iconKey: 'pos',
     scene: { color: '#10b981' },
     caseStudy: {
@@ -144,18 +151,57 @@ export const projects = [
         location: 'Bali, Indonesia',
       },
       overview:
-        'Sistem Point of Sale modern untuk kebutuhan toko/kafe kecil-menengah: manajemen produk, checkout responsif, dan laporan penjualan real-time, dengan backend Golang yang cepat dan frontend React yang ringan.',
+        'Sistem Point of Sale modern untuk kebutuhan toko/kafe kecil-menengah: dashboard ringkasan penjualan, manajemen menu & stok, kasir dengan keranjang real-time, hingga laporan transaksi yang bisa diekspor ke Excel — dengan backend Golang yang cepat dan frontend React yang ringan.',
+      stats: [
+        { value: '7+', label: 'Modul operasional' },
+        { value: 'Real-time', label: 'Tren penjualan & stok' },
+        { value: '1-klik', label: 'Export laporan Excel' },
+      ],
       sections: [
         {
-          title: 'Dashboard & Checkout',
-          body: 'Dashboard menampilkan ringkasan penjualan harian, grafik tren, dan produk terlaris; alur checkout dirancang cepat untuk operasional kasir sehari-hari.',
-          image: posImg,
+          title: 'Posisi Meja & QR Order',
+          body: 'Peta status meja real-time (kosong/terisi) dan generate QR code per meja agar pelanggan bisa langsung memesan dari mejanya masing-masing, lengkap dengan opsi unduh QR sebagai PNG.',
+          image: posMeja,
+        },
+        {
+          title: 'Self-Order Pelanggan',
+          body: 'Halaman pemesanan mobile-friendly yang muncul setelah pelanggan scan QR meja — pilih kategori menu, tambah ke keranjang, dan pesan langsung tanpa perlu panggil pelayan.',
+          image: posSelforder,
+        },
+        {
+          title: 'Pesanan Meja',
+          body: 'Pesanan dari pemindaian QR pelanggan masuk otomatis ke antrian dapur — status berjalan dari "Baru Masuk" hingga "Sedang Disajikan", dengan aksi Tolak atau Proses per pesanan.',
+          image: posPesanan,
+        },
+        {
+          title: 'Dashboard Ringkasan',
+          body: 'Ringkasan performa penjualan & inventaris real-time: total pendapatan, keuntungan bersih, tren pendapatan, distribusi metode pembayaran, produk terlaris, jam sibuk, hingga notifikasi stok menipis.',
+          image: posDashboard,
+        },
+        {
+          title: 'Manajemen Menu / Stok',
+          body: 'Katalog produk dengan kategori, harga, dan stok yang bisa dikelola langsung — pencarian cepat berdasarkan nama atau SKU, lengkap dengan aksi edit & hapus per item.',
+          image: posMenu,
+        },
+        {
+          title: 'Kasir',
+          body: 'Alur checkout cepat: pilih menu per kategori, keranjang otomatis terupdate dengan subtotal, pajak, dan diskon, siap diproses dalam beberapa klik.',
+          image: posKasir,
+        },
+        {
+          title: 'Laporan Penjualan',
+          body: 'Histori transaksi harian lengkap dengan metode pembayaran dan kasir yang bertugas, serta export laporan ke Excel untuk kebutuhan rekap.',
+          image: posLaporan,
         },
       ],
       tech: ['Golang', 'React JS', 'Tailwind CSS', 'PostgreSQL'],
       responsibilities: [
         'Merancang REST API backend dengan Golang untuk transaksi, produk, dan laporan.',
-        'Membangun frontend React responsif untuk alur kasir dan dashboard laporan.',
+        'Membangun frontend React responsif untuk dashboard, manajemen menu, kasir, dan laporan penjualan.',
+        'Mengimplementasikan fitur export laporan ke Excel dan notifikasi stok menipis.',
+        'Membuat sistem QR code per meja untuk self-order pelanggan, termasuk fitur unduh QR sebagai PNG.',
+        'Membangun alur pesanan real-time dari scan QR meja ke antrian dapur, dengan status "Baru Masuk" hingga "Sedang Disajikan".',
+        'Mendesain halaman self-order mobile-friendly untuk pelanggan memesan langsung dari meja via QR code.',
       ],
     },
   },
