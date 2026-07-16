@@ -13,10 +13,12 @@ const ribbons = [
 
 const Backdrop = () => (
   <div className="fixed inset-0 -z-10 overflow-hidden pointer-events-none" aria-hidden="true">
-    {ribbons.map((ribbon) => (
+    {ribbons.map((ribbon, i) => (
       <div
         key={ribbon.color}
-        className="absolute -left-1/4 w-[150vw] blur-[90px] will-change-transform"
+        className={`absolute -left-1/4 w-[150vw] blur-[40px] md:blur-[90px] will-change-transform ${
+          i > 0 ? 'hidden md:block' : ''
+        }`}
         style={{
           top: ribbon.top,
           height: ribbon.height,
@@ -41,7 +43,7 @@ const Backdrop = () => (
     />
 
     <div
-      className="absolute inset-[-6%] opacity-[0.04] mix-blend-screen will-change-transform animate-grain"
+      className="hidden md:block absolute inset-[-6%] opacity-[0.04] mix-blend-screen will-change-transform animate-grain"
       style={{ backgroundImage: grain }}
     />
   </div>

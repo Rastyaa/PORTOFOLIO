@@ -7,6 +7,7 @@ const Snow = () => {
 
   useEffect(() => {
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    if (window.matchMedia('(max-width: 767px)').matches) return;
 
     const canvas = canvasRef.current;
     const ctx = canvas.getContext('2d');

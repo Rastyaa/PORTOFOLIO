@@ -1,15 +1,15 @@
-import guestlistHome from '../assets/guestlist-home.png';
-import guestlistDetail from '../assets/guestlist-detail.png';
-import posDashboard from '../assets/pos-dashboard.png';
-import posMenu from '../assets/pos-menu.png';
-import posLaporan from '../assets/pos-laporan.png';
-import posKasir from '../assets/pos-kasir.png';
-import posMeja from '../assets/pos-meja.png';
-import posPesanan from '../assets/pos-pesanan.png';
-import posSelforder from '../assets/pos-selforder.png';
-import biosmbHome from '../assets/biosmb-home.png';
-import enumaImg from '../assets/Enuma.jpeg';
-import souvImg from '../assets/Souv.jpeg';
+import guestlistHome from '../assets/guestlist-home.webp';
+import guestlistDetail from '../assets/guestlist-detail.webp';
+import posDashboard from '../assets/pos-dashboard.webp';
+import posMenu from '../assets/pos-menu.webp';
+import posLaporan from '../assets/pos-laporan.webp';
+import posKasir from '../assets/pos-kasir.webp';
+import posMeja from '../assets/pos-meja.webp';
+import posPesanan from '../assets/pos-pesanan.webp';
+import posSelforder from '../assets/pos-selforder.webp';
+import biosmbHome from '../assets/biosmb-home.webp';
+import enumaImg from '../assets/Enuma.webp';
+import souvImg from '../assets/Souv.webp';
 
 export const roles = ['Software Engineer', 'React Developer', 'Fullstack Enthusiast'];
 

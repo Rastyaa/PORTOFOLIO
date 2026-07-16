@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { ArrowDownRight, ArrowUpRight } from 'lucide-react';
 import { revealUp, staggerContainer, fadeInUp } from '../lib/motion';
-import profileImg from '../assets/Profile.jpeg';
+import profileImg from '../assets/Profile.webp';
 
 const facts = ['Software Engineer @ guestlist.id', 'IT · Undiknas', 'Bali, Indonesia'];
 
