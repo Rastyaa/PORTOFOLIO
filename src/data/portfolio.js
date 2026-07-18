@@ -36,7 +36,7 @@ export const projects = [
     image: guestlistHome,
     images: [guestlistHome, guestlistDetail],
     iconKey: 'guestlist',
-    scene: { color: '#34d399' },
+    scene: { color: '#34d399', device: 'phone' },
     caseStudy: {
       subtitle: 'Platform concierge modern untuk nightlife, layanan, dan pengalaman curated di Bali.',
       meta: {

@@ -78,7 +78,7 @@ const ProjectDetail = () => {
               className="relative h-80 md:h-96 mt-16 border border-line bg-raised overflow-hidden"
             >
               <Suspense fallback={null}>
-                <ProjectScene screenImage={project.image} color={scene.color} />
+                <ProjectScene screenImage={project.image} color={scene.color} device={scene.device} />
               </Suspense>
               <span className="meta absolute bottom-4 left-1/2 -translate-x-1/2">Drag to rotate</span>
             </motion.div>
