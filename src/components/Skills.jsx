@@ -15,7 +15,7 @@ const TechItem = ({ tech }) => {
       className="flex items-center gap-3 border border-line bg-raised px-4 py-3.5 transition-colors duration-300 hover:border-line-strong"
     >
       {Logo && <Logo size={22} color={tech.brand} className="shrink-0" />}
-      <span className="text-[15px] font-medium text-paper whitespace-nowrap">{tech.name}</span>
+      <span className="text-[15px] font-medium text-bone whitespace-nowrap">{tech.name}</span>
     </motion.li>
   );
 };
@@ -25,8 +25,8 @@ const Skills = () => (
     <div className="max-w-[1200px] mx-auto px-6">
       <SectionHeading
         eyebrow="Stack"
-        title="Yang dipakai sehari-hari"
-        subtitle="Dua puluh dua alat, satu tujuan: mengirim produk."
+        title="The daily stack"
+        subtitle="Twenty-two tools, one goal: shipping product."
       />
 
       <motion.div

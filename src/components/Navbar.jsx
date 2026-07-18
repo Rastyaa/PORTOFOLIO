@@ -22,35 +22,40 @@ const Navbar = () => {
   return (
     <nav
       className={`fixed w-full z-50 transition-all duration-300 ${
-        scrolled ? 'bg-ink/80 backdrop-blur-xl border-b border-line py-3' : 'border-b border-transparent py-6'
+        scrolled ? 'bg-night/80 backdrop-blur-xl border-b border-line py-3' : 'border-b border-transparent py-6'
       }`}
     >
       <div className="max-w-[1200px] mx-auto px-6">
         <div className="flex items-center justify-between">
-          <Link to="/" className="font-display text-lg font-semibold tracking-[-0.02em] text-paper">
+          <Link to="/" className="font-display text-lg font-semibold tracking-[-0.01em] text-bone">
             Sattyatma
           </Link>
 
           <div className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
-              <Link key={link.href} to={`/${link.href}`} className="meta transition-colors hover:text-paper">
+              <Link
+                key={link.href}
+                to={`/${link.href}`}
+                className="meta group relative pb-1 transition-colors hover:text-bone"
+              >
                 {link.label}
+                <span className="absolute bottom-0 left-0 h-px w-full origin-left scale-x-0 bg-bronze-lit transition-transform duration-300 group-hover:scale-x-100" />
               </Link>
             ))}
             <button
               onClick={openPalette}
               aria-label="Open command palette"
-              className="meta flex items-center gap-1.5 border border-line px-2.5 py-1.5 transition-colors hover:border-line-strong hover:text-paper"
+              className="meta flex items-center gap-1.5 border border-line px-2.5 py-1.5 transition-colors hover:border-bronze-lit hover:text-bronze-lit"
             >
               <Command size={12} />K
             </button>
           </div>
 
           <div className="md:hidden flex items-center gap-4">
-            <button onClick={openPalette} aria-label="Open command palette" className="text-muted hover:text-paper transition-colors">
+            <button onClick={openPalette} aria-label="Open command palette" className="text-muted hover:text-bone transition-colors">
               <Command size={20} />
             </button>
-            <button onClick={toggleMenu} aria-label="Toggle menu" className="text-muted hover:text-paper transition-colors">
+            <button onClick={toggleMenu} aria-label="Toggle menu" className="text-muted hover:text-bone transition-colors">
               {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
           </div>
@@ -63,14 +68,14 @@ const Navbar = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden mt-3 bg-ink/95 backdrop-blur-xl border-t border-line overflow-hidden"
+            className="md:hidden mt-3 bg-night/95 backdrop-blur-xl border-t border-line overflow-hidden"
           >
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 to={`/${link.href}`}
                 onClick={toggleMenu}
-                className="meta block border-b border-line px-6 py-4 hover:text-paper"
+                className="meta block border-b border-line px-6 py-4 hover:text-bone"
               >
                 {link.label}
               </Link>

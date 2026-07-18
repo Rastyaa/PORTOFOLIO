@@ -76,7 +76,7 @@ const CommandPalette = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className="fixed inset-0 z-[100] bg-ink/80 backdrop-blur-sm flex items-start justify-center pt-[15vh] px-4"
+          className="fixed inset-0 z-[100] bg-night/80 backdrop-blur-sm flex items-start justify-center pt-[15vh] px-4"
           onClick={close}
         >
           <motion.div
@@ -97,7 +97,7 @@ const CommandPalette = () => {
                   setActiveIndex(0);
                 }}
                 placeholder="Jump to a section or link..."
-                className="flex-1 bg-transparent outline-none text-paper placeholder:text-muted"
+                className="flex-1 bg-transparent outline-none text-bone placeholder:text-muted"
               />
               <kbd className="meta border border-line px-1.5 py-0.5">esc</kbd>
             </div>
@@ -110,7 +110,7 @@ const CommandPalette = () => {
                   onMouseEnter={() => setActiveIndex(index)}
                   onClick={() => select(item)}
                   className={`w-full flex items-center gap-3 px-5 py-3 text-left transition-colors ${
-                    index === activeIndex ? 'bg-jade/10 text-jade-lit' : 'text-muted'
+                    index === activeIndex ? 'bg-bronze/10 text-bronze-lit' : 'text-muted'
                   }`}
                 >
                   <item.icon size={15} />
